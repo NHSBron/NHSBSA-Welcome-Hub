@@ -1,0 +1,1113 @@
+<!--
+==========================================================
+TABLE OF CONTENTS
+==========================================================
+1. Navigation         - ID: nhs-header
+2. Home Page          - ID: home
+3. Guides Page        - ID: guides
+4. FAQs Page          - ID: faqs
+5. Catalogue Page     - ID: CC
+6. Stat & Mand Page   - ID: SaMT
+7. Non-Stat & Mand    - ID: NSaMT
+8. EPR Training       - ID: EPR
+9. Support            - ID: SUP
+10. 
+==========================================================
+-->
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NHSBSA Welcome Hub</title>
+  <!-- Bootstrap 5.3.6 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Custom Stylesheet -->
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- ======================================================
+=                     NAVIGATION SECTION                  =
+========================================================= -->
+  <header class="nhs-header">
+    <div class="container">
+      <div class="row">
+        <!--<div class="banner-wrapper">
+          <img src="https://assets.codepen.io/8889025/MY-Logo-Banner.png" class="Banner_image" alt="Welcome Hub Banner">
+          <div class="banner-text-overlay">
+            <h1>Mid Yorkshire Teaching NHS Trust</h1>
+          </div>
+-->
+      </div>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon">
+          </button>
+          <div class="collapse navbar-collapse" id="navMenu">
+            <div class="logo-container">
+              <img src="https://assets.codepen.io/8889025/BSA_App0.png" class="logo esr" />
+              <img src="https://assets.codepen.io/8889025/BSA_App0.png" class="logo nhs" />
+            </div>
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item"><a class="nav-link" onclick="showPage('home')">Home</a></li>
+              <li class="nav-item"><a class="nav-link" onclick="showPage('App_OS')">Our strategy</a></li>
+              <li class="nav-item"><a class="nav-link" onclick="showPage('App_GS')">Getting started</a></li>
+              <li class="nav-item"><a class="nav-link" onclick="showPage('App_LATBSA')">Life at the NHSBSA</a></li>
+              <!-- <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown" onclick="showPage('CC');">
+                    Catalogue
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-submenu">
+                      <a class="dropdown-item" onclick="showPage('SaMT');">Statutory and Mandatory Training</a>
+                      <a class="dropdown-item" onclick="showPage('NSaMT');">Non Statutory and Mandatory Training</a>
+                      <!--<a class="dropdown-item" onclick="showPage('EPR');">EPR Training</a>
+                    </li>
+                    <!--
+              <li class="dropdown-submenu">
+                <a class="dropdown-item submenu-toggle" onclick="showPage('contact'); showSubSection('emergency')">Emergency</a>
+                <ul class="submenu dropdown-menu">
+                  <li><a class="dropdown-item" onclick="showPage('contact'); showSubSection('urgent')">Urgent Care</a></li>
+                  <li><a class="dropdown-item" onclick="showPage('contact'); showSubSection('ambulance')">Ambulance Services</a></li>
+                </ul>
+              </li>
+-->
+            </ul>
+            </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Combined Toolbar and Search -->
+      <div class="container mt-3">
+        <div class="row align-items-center g-2">
+          <!-- Search Bar (left, stretches as needed) -->
+          <div class="col">
+            <input type="text" id="searchInput" class="form-control" placeholder="Search the site" onkeyup="searchPages()">
+          </div>
+          <!-- Control Panel (right, auto-width) -->
+          <div class="col-auto">
+            <div class="d-flex flex-wrap align-items-center gap-2 control-toolbar p-2 rounded">
+              <!-- Theme Selector -->
+              <label for="themeSelector" class="visually-hidden">Choose Theme</label>
+              <select id="themeSelector" class="form-select form-select-sm w-auto">
+                <option value="blue">💙 NHS Blue</option>
+                <option value="green">💚 NHS Green</option>
+                <option value="grey">🩶 NHS Grey</option>
+                <option value="pink">💗 NHS Pink</option>
+                <option value="purple">💜 NHS Purple</option>
+                <option value="red">❤️ NHS Red</option>
+                <option value="yellow">💛 NHS Yellow</option>
+                <option value="calm">🌫 Calm Grey</option>
+                <option value="contrast">⚠️ High Contrast</option>
+              </select>
+              <!-- Text Scaling -->
+              <div class="btn-group btn-group-sm" role="group" aria-label="Text Size">
+                <button onclick="setTextSize('scale-small')" class="btn btn-outline-secondary">A–</button>
+                <button onclick="setTextSize('scale-medium')" class="btn btn-outline-secondary">A</button>
+                <button onclick="setTextSize('scale-large')" class="btn btn-outline-secondary">A+</button>
+                <button onclick="setTextSize('scale-xlarge')" class="btn btn-outline-secondary">A++</button>
+              </div>
+              <!-- Dark Mode -->
+              <button id="toggleDark" class="btn btn-sm btn-outline-primary">
+                🌙 Dark Mode
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </header>
+  <!-- <div class="banner-wrapper">
+    <img src="https://assets.codepen.io/8889025/MY-Logo-Banner.png" class="Banner_image" alt="Welcome Hub Banner">
+    <div class="banner-text-overlay">
+      <h2>Learning and Development Hub</h2>
+    </div>
+  </div>-->
+  <!-- ======================================================
+=                     HOME PAGE SECTION                   =
+========================================================= -->
+  <div id="home" class="page active">
+    <div class="row">
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">The welcome hub</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <div class="container">
+      <div class="banner-wrapper">
+        <img src="https://assets.codepen.io/8889025/BSA_App2.jpg" class="Banner_image" alt="Welcome Hub Banner">
+        <div class="banner-text-overlay">
+          <h2>The welcome hub</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p>Here at the NHS Business Services Authority (NHSBSA), what we do matters.</p>
+
+          <p>We manage the NHS Pension Scheme, process prescription payments and so much more. Our services are used by NHS organisations, contractors and the public. We're proud to be part of something meaningful, that touches millions of lives.</p>
+
+          <p>We place people at the heart of our organisation. That's why when you join us, you'll be empowered and supported to help your career grow.</p>
+
+          <p>We strive to offer a fantastic colleague experience, where every colleague is heard, supported and respected. Wellbeing, diversity and inclusion is at the centre of this and you can join our lived experience networks who help us bring our authentic selves to work.</p>
+
+          <p>We're committed to being a flexible employer and we try to offer a working pattern that suits you where possible, through hybrid working, flexible hours and more.</p>
+
+          <p>Choose a tile to explore more.</p>
+        </div>
+      </div>
+
+      <div class="row" style="text-align:center;width:100%">
+        <div class="col-4 Pages-col">
+
+          <div class="tileContainer">
+            <div class="tileCell" onclick="showPage('App_OS')">
+              <image src="https://assets.codepen.io/8889025/BSA_App3.jpg" class="responsive Benefits_tiles"></image>
+              <p class="tile_Sub_heading">Our strategy</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-4 Pages-col">
+          <div class="tileContainer" onclick="showPage('App_GS')">
+            <div class="tileCell">
+              <image src="https://assets.codepen.io/8889025/BSA_App4.jpg" class="responsive Benefits_tiles"></image>
+              <p class="tile_Sub_heading">Getting started</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 Pages-col">
+          <div class="tileContainer" onclick="showPage('App_LATBSA')">
+            <div class="tileCell">
+              <image src="https://assets.codepen.io/8889025/BSA_App5.jpg" class="responsive Benefits_tiles"></image>
+              <p class="tile_Sub_heading">Life at the NHSBSA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col Pages-col">
+          <image src="https://assets.codepen.io/8889025/BSA_App6.jpg" class="responsive Banner_image"></image>
+          <!--<div class="banner-text-overlay">
+        <h1>The Welcome Hub</h1>
+      </div>
+-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ======================================================
+=                    Our strategy SECTION                 =
+========================================================= -->
+  <div id="App_OS" class="page">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#" onclick="showPage('home')">The Welcome Hub</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Our strategy</li>
+      </ol>
+    </nav>
+    <div class="container">
+      <div class="banner-wrapper">
+        <img src="https://assets.codepen.io/8889025/BSA_App28.jpg" class="Banner_image" alt="Welcome Hub Banner">
+        <div class="banner-text-overlay">
+          <h2>Our strategy</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p>At the heart of our strategy is our people, our purpose and your progress.</p>
+          <p>Our people are key to our success and soon you'll play a crucial role in helping us to achieve our commitment to improving the health and wellbeing of every individual we serve.</p>
+          <p>Which brings us onto our purpose - to deliver business service excellence to the NHS to help people live longer, healthier lives.</p>
+          <p>Here at the NHSBSA, progress isn't just a word, it's a promise. We're committed to fostering an inclusive work environment that promotes engagement and wellbeing, where you'll have opportunities for development and progression throughout your career with us.</p>
+          <p>Quite simply, we want the NHSBSA to be the best place any of us have worked, where everyone matters and can flourish.</p>
+          <div class="tileContainer" style="float:right;">
+            <div class="tileCell">
+              <image src="https://assets.codepen.io/8889025/BSA_V_Tile.PNG" class="responsive Benefits_tiles" onclick="hideElementsByClass('pages');showElementsByID('OS');" alt="Our Values"></image>
+            </div>
+          </div>
+          <p>You can explore our strategy in more detail by <a href="https://www.nhsbsa.nhs.uk/sites/default/files/2024-04/Strategy 2024-2029 %28V1%29 04.2024.pdf" target="_blank">reading it in full on our website</a>. Or, if you're short on time, our strategy on a page gives an overview of who we are and what we do. You can find this on page 18.</p>
+
+          <h4>Our values</h4>
+
+          <p>As an organisation, we really do CARE, and we've built our values around this sentiment. Our values are our ethical and moral compass, shaping everything we do here and influencing behaviours at all levels.</p>
+
+          <p>We're <span style="font-size: 1.2em; font-weight: bold;">C</span>ollaborative.</p>
+          <p>We're <span style="font-size: 1.2em; font-weight: bold;">A</span>dventurous.</p>
+          <p>We're <span style="font-size: 1.2em; font-weight: bold;">R</span>eliable.</p>
+          <p>We're <span style="font-size: 1.2em; font-weight: bold;">E</span>nergetic.</p>
+          <p>Expand each section below to find out more about our values.”</p>
+
+          <div class="WHVAcc" id="WHVAcc">
+            <!--card start -->
+            <div class="card">
+              <div class="card-header" id="WHVAcc1">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#CCL1" aria-expanded="true" aria-controls="CCL1">
+                    <h5>Collaborative</h5>
+                  </button>
+                </h2>
+              </div>
+              <div id="CCL1" class="collapse" aria-labelledby="WHVAcc1" data-parent="#WHVAcc">
+                <div class="card-body">
+                  <p>Being collaborative is all about working together to achieve our goals and deliver on our NHSBSA strategy. We do this through building relationships with new and existing partners, both locally and nationally. Great communication, respect for others, compromise, and a willingness to share knowledge are all key drivers of collaboration. We know that by harnessing diverse perspectives, skills and experiences, we can achieve great things.</p>
+                </div>
+              </div>
+            </div>
+
+            <!--card start -->
+            <div class="card">
+              <div class="card-header" id="WHVAcc2">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#CCL2" aria-expanded="true" aria-controls="CCL2">
+                    <h5>Adventurous</h5>
+                  </button>
+                </h2>
+              </div>
+              <div id="CCL2" class="collapse" aria-labelledby="WHVAcc2" data-parent="#WHVAcc">
+                <div class="card-body">
+                  <p>Embracing new ideas, seeking new opportunities and exploring new possibilities are all part and parcel of being adventurous. Our colleagues aren't afraid of doing things differently to provide business service excellence and, if that means learning quickly and evolving, then we'll jump right in.</p>
+                </div>
+              </div>
+            </div>
+
+            <!--card start -->
+            <div class="card">
+              <div class="card-header" id="WHVAcc3">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#CCL3" aria-expanded="true" aria-controls="CCL3">
+                    <h5>Reliable</h5>
+                  </button>
+                </h2>
+              </div>
+              <div id="CCL3" class="collapse" aria-labelledby="WHVAcc3" data-parent="#WHVAcc">
+                <div class="card-body">
+                  <p>At its core, being reliable is about doing what we say we will. A key element of this is being open, honest and transparent in all that we do – even when facing challenges. Here at the NHSBSA, we're trusted to do the right thing. We're always looking to maintain the strong relationships we've created and ultimately fulfil our commitments to each other, our customers and our stakeholders.</p>
+                </div>
+              </div>
+            </div>
+            <!--card start -->
+            <div class="card">
+              <div class="card-header" id="WHVAcc4">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#CCL4" aria-expanded="true" aria-controls="CCL4">
+                    <h5>Energetic</h5>
+                  </button>
+                </h2>
+              </div>
+              <div id="CCL4" class="collapse" aria-labelledby="WHVAcc4" data-parent="#WHVAcc">
+                <div class="card-body">
+                  <p>Being energetic is all about giving our best every day. It's about approaching our work with enthusiasm and a positive attitude. Because we're passionate about our purpose, we're motivated to deliver excellent services to our customers, going above and beyond day in, day out.</p>
+                  <p>We're people connected to care.</p>
+                </div>
+              </div>
+            </div>
+            <!-- end of cards-->
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col Pages-col">
+          <image src="https://assets.codepen.io/8889025/BSA_App27.jpg" class="responsive Banner_image"></image>
+          <!--<div class="banner-text-overlay">
+        <h1>The Welcome Hub</h1>
+      </div>
+-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================
+=                    Getting started SECTION                 =
+========================================================= -->
+  <div id="App_GS" class="page">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#" onclick="showPage('home')">The Welcome Hub</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Getting started</li>
+      </ol>
+    </nav>
+    <div class="container">
+      <div class="banner-wrapper">
+        <img src="https://assets.codepen.io/8889025/BSA_App7.jpg" class="Banner_image" alt="Welcome Hub Banner">
+        <div class="banner-text-overlay">
+          <h2>Getting started</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+
+          <p>In line with business need, we allow colleagues to work from home, in our offices, or a mixture of both. We’re delivering national services at scale and our locations reflect that, with offices located across the country.</p>
+          <p>Expand the below options to learn more about our offices.</p>
+          <!-- Section 1 -->
+          <button type="button" class="btn btn-primary w-100 text-start mb-2" data-bs-toggle="modal" data-bs-target="#S1Modal">
+            Fleetwood
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="S1Modal" tabindex="-1" aria-labelledby="S1ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+              <div class="modal-content">
+                <!-- Themed Header -->
+                <div class="modal-header btn btn-primary w-100 text-start d-flex justify-content-between align-items-center">
+                  <h5 class="modal-title mb-0" id="complianceIssueModalLabel">Fleetwood</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Modal Body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-4">
+
+                      <div class="tileContainer">
+                        <div class="tileCell">
+                          <image src="https://assets.codepen.io/8889025/BSA_App8.png" class="responsive Benefits_tiles"></image>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-8">
+
+                      <p>Hesketh House, located in Fleetwood town centre, accessible by tram, bus and car.</p>
+
+                      <p>Find us at Broadway, Fleetwood, FY7 8SS</p>
+
+                      <img src="https://assets.codepen.io/8889025/BSA_App9.png" style="float:left;"><a href="https://www.google.com/maps/place/Hesketh+House,+Broadway,+Fleetwood+FY7+8SS/@53.9085812,-3.0387794,17z/data=!4m5!3m4!1s0x487b5c8f1cf93f3f:0xf4792b4e82d6068c!8m2!3d53.9085781!4d-3.0365854?coh=164777&entry=tt&shorturl=1" target="_blank"> Get directions on Google Maps</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2 -->
+          <button type="button" class="btn btn-primary w-100 text-start mb-2" data-bs-toggle="modal" data-bs-target="#S2Modal">
+            Middlebrook
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="S2Modal" tabindex="-1" aria-labelledby="S2ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+              <div class="modal-content">
+                <!-- Themed Header -->
+                <div class="modal-header btn btn-primary w-100 text-start d-flex justify-content-between align-items-center">
+                  <h5 class="modal-title mb-0" id="complianceIssueModalLabel">Middlebrook</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Modal Body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-4">
+
+                      <div class="tileContainer">
+                        <div class="tileCell">
+                          <image src="https://assets.codepen.io/8889025/BSA_App10.png" class="responsive Benefits_tiles"></image>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-8">
+
+                      <p>Parklands 1A, located on the outskirts of Bolton, easily accessible by car and rail.</p>
+
+                      <p>Find us at Parklands 1A, Floor 1, Middlebrook, Bolton, Lancashire, BL6 4SD</p>
+
+                      <img src="https://assets.codepen.io/8889025/BSA_App9.png" style="float:left;"><a href="https://www.google.co.uk/maps/place/Orbit+Spaces+Parklands+1A,+Bolton+-+Meeting+Room+Hire+%26+Co-working/@53.5780473,-2.536182,18z/data=!4m6!3m5!1s0x487b09a45fd152c5:0x3cef677602c8119e!8m2!3d53.5779222!4d-2.5357475!16s%2Fg%2F11vy36w9qc?entry=tts&g_ep=EgoyMDI1MDIyNC4wIPu8ASoASAFQAw%3D%3D" target="_blank"> Get directions on Google Maps</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 3 -->
+          <button type="button" class="btn btn-primary w-100 text-start mb-2" data-bs-toggle="modal" data-bs-target="#S3Modal">
+            Newcastle, Bridge House
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="S3Modal" tabindex="-1" aria-labelledby="S3ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+              <div class="modal-content">
+                <!-- Themed Header -->
+                <div class="modal-header btn btn-primary w-100 text-start d-flex justify-content-between align-items-center">
+                  <h5 class="modal-title mb-0" id="complianceIssueModalLabel">Newcastle, Bridge House</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Modal Body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-4">
+
+                      <div class="tileContainer">
+                        <div class="tileCell">
+                          <image src="https://assets.codepen.io/8889025/BSA_App11.png" class="responsive Benefits_tiles"></image>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-8">
+
+                      <p>Bridge House, located in Newcastle city centre, accessible by bus, metro and rail.</p>
+                      <p>Find us at 152 Pilgrim Street, Newcastle Upon Tyne, NE1 6SN</p>
+
+                      <img src="https://assets.codepen.io/8889025/BSA_App9.png" style="float:left;"><a href="https://www.google.com/maps/place/152+Pilgrim+St,+Newcastle+upon+Tyne+NE1+6SN/@54.9705572,-1.6091914,17z/data=!3m1!4b1!4m6!3m5!1s0x487e70b7b1da3441:0x126475015fecf897!8m2!3d54.9705572!4d-1.6091914!16s%2Fg%2F11bw3gybl7?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank"> Get directions on Google Maps</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Section 4 -->
+          <button type="button" class="btn btn-primary w-100 text-start mb-2" data-bs-toggle="modal" data-bs-target="#S4Modal">
+            Newcastle, Stella House
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="S4Modal" tabindex="-1" aria-labelledby="S4ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+              <div class="modal-content">
+                <!-- Themed Header -->
+                <div class="modal-header btn btn-primary w-100 text-start d-flex justify-content-between align-items-center">
+                  <h5 class="modal-title mb-0" id="complianceIssueModalLabel">Newcastle, Stella House</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Modal Body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-4">
+
+                      <div class="tileContainer">
+                        <div class="tileCell">
+                          <image src="https://assets.codepen.io/8889025/BSA_App13.png" class="responsive Benefits_tiles"></image>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-8">
+
+                      <p>Stella House, located 5 miles from Newcastle city centre, accessible by bus and car.</p>
+                      <p>Find us at Stella House, Goldcrest Way, Newburn Riverside, Newcastle, NE15 8NY</p>
+
+                      <img src="https://assets.codepen.io/8889025/BSA_App9.png" style="float:left;"><a href="https://www.google.com/maps/place/NHS+Business+Services+Authority/@54.9686339,-1.7145973,17z/data=!3m1!4b1!4m6!3m5!1s0x487e77e861663a69:0x8da496c799a47b30!8m2!3d54.9686339!4d-1.7145973!16s%2Fg%2F1yh9v056x?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank"> Get directions on Google Maps</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Section 5 -->
+          <button type="button" class="btn btn-primary w-100 text-start mb-2" data-bs-toggle="modal" data-bs-target="#S5Modal">
+            Newcastle, Greenfinch Way
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="S5Modal" tabindex="-1" aria-labelledby="S5ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+              <div class="modal-content">
+                <!-- Themed Header -->
+                <div class="modal-header btn btn-primary w-100 text-start d-flex justify-content-between align-items-center">
+                  <h5 class="modal-title mb-0" id="complianceIssueModalLabel">Newcastle, Greenfinch Way</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Modal Body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-4">
+
+                      <div class="tileContainer">
+                        <div class="tileCell">
+                          <image src="https://assets.codepen.io/8889025/BSA_App12.png" class="responsive Benefits_tiles"></image>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-8">
+
+                      <p>Unit 5, Greenfinch Way, located 5 miles from Newcastle city centre, accessible by bus and car.</p>
+                      <p>Find us at Newburn Riverside, Newcastle upon Tyne, NE15 8NX</p>
+
+                      <img src="https://assets.codepen.io/8889025/BSA_App9.png" style="float:left;"><a href="https://maps.app.goo.gl/DUS66gKiBsBhv4WF9" target="_blank"> Get directions on Google Maps</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Section 6 -->
+          <button type="button" class="btn btn-primary w-100 text-start mb-2" data-bs-toggle="modal" data-bs-target="#S6Modal">
+            Wakefield
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="S6Modal" tabindex="-1" aria-labelledby="S6ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+              <div class="modal-content">
+                <!-- Themed Header -->
+                <div class="modal-header btn btn-primary w-100 text-start d-flex justify-content-between align-items-center">
+                  <h5 class="modal-title mb-0" id="complianceIssueModalLabel">Wakefield</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Modal Body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-4">
+
+                      <div class="tileContainer">
+                        <div class="tileCell">
+                          <image src="https://assets.codepen.io/8889025/BSA_App14.png" class="responsive Benefits_tiles"></image>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-8">
+
+                      <p>Wakefield House, located in Wakefield city, close to the local shopping centre.</p>
+
+                      <p>Find us at 4th Floor, Wakefield House, Borough Road, Wakefield, WF1 3UB </p>
+
+                      <img src="https://assets.codepen.io/8889025/BSA_App9.png" style="float:left;"><a href="https://www.google.com/maps/place/Wakefield+House,+Borough+Rd,+Wakefield+WF1+1XU/@53.6853402,-1.4982018,17z/data=!3m1!4b1!4m5!3m4!1s0x4879670034cb0399:0xea07ca443e335541!8m2!3d53.6853402!4d-1.4960078?coh=164777&entry=tt&shorturl=1" target="_blank"> Get directions on Google Maps</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--End of cards -->
+          <hr>
+          <div class="text-start">
+            <h4>Our organisation</h4>
+            <p>We depend upon the capabilities of our Digital, Data and Technology function, with our enabling services supplied by our People, Corporate Services, Finance, Commercial, Estates, Strategy, Performance, Business Development, Communications and Marketing, Growth and Portfolio Management teams. These all support the delivery of our operational services listed below:</p>
+
+            <p>Workforce Services: our platforms and services enable the career pathways of colleagues across health and care, helping the NHS to support its people.</p>
+
+            <p>Primary Care Services: we provide a range of services to support our primary care providers, connecting with pharmacy, dentistry, ophthalmic and GP providers to support the delivery of their critical services.</p>
+
+            <p>Citizen Services: we are proud to support members of the public to gain access to healthcare and help with health costs.</p>
+          </div>
+          <hr>
+          <div class="text-start">
+            <h4>Our socials</h4>
+            <p>Let’s stay connected! Follow us on our social media channels to find out more about who we are and what we do. </p>
+
+            <a type="button" class="btn btn-primary" href="https://www.linkedin.com/company/nhs-business-services-authority/posts/?feedView=all" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"></path>
+              </svg>LinkedIn</a>
+
+            <a type="button" href="https://www.facebook.com/NHSBusinessServicesAuthority/?locale=en_GB" target="_blank" class="btn btn-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path>
+              </svg>
+              Facebook
+            </a>
+            <a type="button" href="https://x.com/NHSBSA" target="_blank" class="btn btn-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"></path>
+              </svg>
+              X
+            </a>
+
+            <a href="https://www.glassdoor.co.in/Overview/Working-at-NHS-Business-Services-Authority-EI_IE248762.11,42.htm" target="_blank" type="button" class="btn btn-primary">
+              <img src="https://assets.codepen.io/8889025/glassdoor.svg" width="16" height="16" style="filter: invert(1);" alt="Glassdoor Logo">
+              Glassdoor
+            </a>
+
+            <a type="button" class="btn btn-primary" href="mailto:bsa.hrqueires@nhsbsa.nhs.uk">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"></path>
+              </svg>
+              Got a question? Contact us
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col Pages-col">
+          <image src="https://assets.codepen.io/8889025/BSA_App15.jpg" class="responsive Banner_image"></image>
+          <!--<div class="banner-text-overlay">
+        <h1>The Welcome Hub</h1>
+      </div>
+-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================
+=                    Life at the NHSBSA SECTION                 =
+========================================================= -->
+  <div id="App_LATBSA" class="page">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#" onclick="showPage('home')">The Welcome Hub</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Life at the NHSBSA</li>
+      </ol>
+    </nav>
+    <div class="container">
+      <div class="banner-wrapper">
+        <img src="https://assets.codepen.io/8889025/BSA_App16.jpg" class="Banner_image" alt="Welcome Hub Banner">
+        <div class="banner-text-overlay">
+          <h2>Life at the NHSBSA</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+
+          <p>Just as we design our services around the needs of our customers, we take pride in placing our people at the heart of our organisation. That’s why when you join us, you’ll be empowered to try new things and given all the support you need to help your career grow.</p>
+
+          <p>We rely on the skills, energy and commitment of each and every one of our people. To say thanks, we offer a competitive benefits package for our colleagues.</p>
+
+          <p>Expand the below options to learn more about life at the NHSBSA. </p>
+          <!-- Section 7 -->
+          <button type="button" class="btn btn-primary w-100 text-start mb-2" data-bs-toggle="modal" data-bs-target="#S7Modal">
+            Your benefits
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="S7Modal" tabindex="-1" aria-labelledby="S7ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+              <div class="modal-content">
+                <!-- Themed Header -->
+                <div class="modal-header btn btn-primary w-100 text-start d-flex justify-content-between align-items-center">
+                  <h5 class="modal-title mb-0" id="complianceIssueModalLabel">Your benefits</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Modal Body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <p><b>Helping you save now and for the future</b></p>
+
+                      <p>The NHS Pension Scheme is one of the most comprehensive and generous in the UK with a 23.7% employer contribution. You’ll automatically benefit from being a member of the NHS Pension Scheme as soon as you start working with us.
+                        Through our financial wellbeing provider, Salary Finance, you’ll have access to savings accounts, loans, and financial tools and insights. Our home and electronics benefit allows you to spread the cost of purchases over a set period, making it easier to manage your finances.</p>
+
+                      <p>You’ll have access to a wide range of lifestyle discounts through our provider Vivup, as well as external providers like Blue Light Card and Health Service Discounts. You’ll also benefit from a range of salary sacrifice options, including Cycle to Work, gym membership discounts, our car lease scheme and travel loans to purchase annual season tickets.</p>
+
+                      <p><b>Work that works for you</b></p>
+
+                      <p>Enjoy a minimum of 27 days of annual leave per year (pro rata), which increases with your length of service, plus bank holidays. You’ll also have the option to buy more annual leave. Colleagues are entitled to 15 hours of volunteer leave each financial year; this time is yours to be used in ways that are meaningful to you.</p>
+
+                      <p>We support flexible working options for many of our roles and have some amazing family friendly policies, including shared parental leave and providing enhanced maternity and adoption leave, all to help you balance work and life. Our flexible retirement package allows you to adjust your working hours as you approach retirement.</p>
+
+                      <p><b>Discover your potential</b></p>
+
+                      <p>We recognise our colleagues every month, celebrating amazing achievements through our colleague recognition scheme and annually at our awards event.</p>
+
+                      <p>Progress isn’t just a word, it’s a promise! We offer a range of learning and development opportunities to help you reach your full potential, including a range of online resources, courses and development programmes. From enhancing your knowledge with apprenticeships to senior leadership development through our Shadow Board, we’ve got you covered.</p>
+
+                      <p><b>Prioritising you and your wellbeing</b></p>
+
+                      <p>We want all our colleagues to be their best selves in and out of work and to be able to access support for when life’s challenges impact the way we feel. You can explore our complete wellbeing offer below.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 8 -->
+          <button type="button" class="btn btn-primary w-100 text-start mb-2" data-bs-toggle="modal" data-bs-target="#S8Modal">
+            Your wellbeing
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="S8Modal" tabindex="-1" aria-labelledby="S8ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+              <div class="modal-content">
+                <!-- Themed Header -->
+                <div class="modal-header btn btn-primary w-100 text-start d-flex justify-content-between align-items-center">
+                  <h5 class="modal-title mb-0" id="complianceIssueModalLabel">Your wellbeing</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Modal Body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+
+                      <p><b>Our success begins with you</b></p>
+
+                      <p>We take pride in placing our people at the heart of our organisation. From the moment you join us, you’ll have access to a range of tools and services designed to support your health and wellbeing. Wellbeing is a key part of everything we do, from everyday conversations with your team to your annual wellbeing check-in with your manager. We’re committed to supporting you to feel your best in the workplace, based on your own unique needs. </p>
+
+                      <p>We know that mental and physical wellbeing are closely linked. When they're out of sync, our whole wellbeing can suffer. That’s why we offer a variety of tools and resources to help you manage your physical and mental health. </p>
+
+                      <p><b>Your physical wellbeing</b></p>
+
+                      <p>We offer several resources to help you stay healthy, including free flu vouchers to keep you protected during flu season.
+                        We also offer free weekly yoga sessions, focusing on relieving common physical discomforts such as neck, back, and shoulder pain and providing an opportunity to relax and destress. </p>
+
+                      <p>Our occupational health services help us to understand what workplace adjustments can be made to support you at work. These adjustments are available to colleagues with a disability, neurodivergence, long-term health conditions, or caring responsibilities that may impact their ability to perform day-to-day tasks in their role. If you think you may need adjustments, we encourage you to reach out to your new line manager before you start, so we can make sure you're supported as you transition into your new role. </p>
+
+                      <p><b>Your mental wellbeing</b></p>
+
+                      <p>As part of your induction, you’ll complete the ‘Building Resilience’ eLearning module to help you develop the tools needed for managing stress, adapting to change and boosting your overall resilience. We also provide access to Unmind, a mental wellbeing app that includes mindfulness exercises to help reduce stress, anxiety, and promote relaxation.</p>
+
+                      <p><b>Employee Assistance Programme (EAP)</b></p>
+
+                      <p>The EAP is here to support your wellbeing, 24 hours a day, 7 days a week, 365 days a year. If you need advice or someone to talk to, you’ll have access to a confidential telephone helpline, six free telephone, face to face or online counselling sessions and a dedicated wellbeing portal, providing a range of support, from managing mental and physical health to practical advice on financial and legal matters. </p>
+
+                      <p><b>Safeguarding customers and colleagues</b></p>
+
+                      <p>The NHSBSA has a commitment to safeguarding our customers and colleagues. This means protecting people’s health, wellbeing and human rights, enabling them to live free from harm, abuse and neglect. As part of your induction you’ll complete training on safeguarding and the policies and procedures that all colleagues follow to protect those we serve.</p>
+
+                      <p><b>Diversity and inclusion</b></p>
+
+                      <p>We're all different and have varying needs, that’s why we're committed to taking equality, diversity and inclusion into account in everything we do. This includes providing and transforming services, recruitment, procuring goods and services, developing policies, communicating and involving people in our work.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 9 -->
+          <button type="button" class="btn btn-primary w-100 text-start mb-2" data-bs-toggle="modal" data-bs-target="#S9Modal">
+            Colleague networks
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="S9Modal" tabindex="-1" aria-labelledby="S9ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+              <div class="modal-content">
+                <!-- Themed Header -->
+                <div class="modal-header btn btn-primary w-100 text-start d-flex justify-content-between align-items-center">
+                  <h5 class="modal-title mb-0" id="complianceIssueModalLabel">Colleague networks</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Modal Body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <p>Our networks help shape a positive, inclusive culture where everyone can thrive. Whether you join as a member or an ally, you’ll be helping us create the best place any of us have worked.</p>
+                      <p>There are range of ways to get involved and develop both personally and professionally:</p>
+                      <ul>
+                        <li>building your network and connecting with colleagues across the organisation
+                        <li>opportunities for personal development and leadership
+                        <li>taking part in events, discussions and awareness activities
+                        <li>access to bespoke programmes, like reciprocal mentoring for inclusion and the BAME development programme
+                      </ul>
+                      <p><b>Lived experience networks</b></p>
+                      <p>Our lived experience networks are for colleagues with lived experience. This can be through identifying with a personal characteristic, having a close connection to the lived experience, or as an ally.
+
+                      <p>This includes:</p>
+                      <ul>
+                        <li>Women’s Network
+                        <li>Black, Asian and Minority Ethnic (BAME) Network
+                        <li>Disability and Neurodiversity Network
+                        <li>LGBTQ+ Network    
+                      </ul>
+                      <p><b>Support networks</b></p>
+                      <p>Our support networks provide a specific supportive service to colleagues. We provide training to members of these networks.</p>
+                      <p>This includes:</p>
+                      <ul>
+                        <li>Mental Health First Aid Network
+                        <li>Menopause Champion Network
+                        <li>Domestic Abuse Support Network
+                      </ul>
+                      <p><b>Core networks</b></p>
+                      <p>Our core networks support the delivery of our strategic goals focused on our people and environment.</p>
+                      <p>This includes:</p>
+                      <ul>
+                        <li>Wellbeing Network
+                        <li>Environment Network
+                        <li>Armed Forces Network
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Section 10 -->
+          <button type="button" class="btn btn-primary w-100 text-start mb-2" data-bs-toggle="modal" data-bs-target="#S10Modal">
+            Approach to social impact
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="S10Modal" tabindex="-1" aria-labelledby="S10ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+              <div class="modal-content">
+                <!-- Themed Header -->
+                <div class="modal-header btn btn-primary w-100 text-start d-flex justify-content-between align-items-center">
+                  <h5 class="modal-title mb-0" id="complianceIssueModalLabel">Approach to social impact</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Modal Body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <p>We recognise the important role we play in society and the positive impact we can have. Using our skills, expertise, and time, we contribute to the wellbeing of the community through education, raising awareness of services, volunteering and supporting social mobility through our employment opportunities. </p>
+
+                      <p>We want to make a meaningful difference to the communities in which we work, building stronger relationships through education.</p>
+
+                      <p><b>Social mobility</b></p>
+
+                      <p>We believe that talent should be nurtured, developed and rewarded based on skills and potential, not influenced by a person’s socio-economic background, the school they attended, or the jobs of their parents. Everyone should have a fair chance to succeed. </p>
+
+                      <p>As part of our commitment, we’ve signed the Social Mobility Pledge, holding us accountable across four key focus areas to support individuals from lower socio-economic backgrounds: outreach, access, recruitment and selection and progression.</p>
+
+                      <p><b>Volunteering and fundraising</b></p>
+
+                      <p>All colleagues are entitled to 15 hours of volunteer leave each financial year. This time is yours to be used in ways that are meaningful to you, whether it’s supporting a cause close to your heart or using your unique skills to create a positive impact in the community. </p>
+
+                      <p>Getting involved in volunteering opportunities helps us connect our values to our greater purpose.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--End of cards -->
+          <hr>
+          <h4>Our people, our stories</h4>
+          <p>Learn more about life at the NHSBSA through the experiences of our colleagues.</p>
+        </div>
+      </div>
+
+      <div class="row" style="text-align:center;">
+        <div class="col-6 Pages-col">
+          <!-- Section 11 -->
+
+          <div class="tileContainer">
+            <div class="tileCell" data-bs-toggle="modal" data-bs-target="#S11Modal">
+              <image src="https://assets.codepen.io/8889025/BSA_App18.jpg" class="responsive Benefits_tiles"></image>
+              <p class="tile_Sub_heading">Anna Burnett<br><span class="tile_Sub_heading">Project Support Officer</span></p>
+            </div>
+
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="S11Modal" tabindex="-1" aria-labelledby="S11ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+              <div class="modal-content">
+                <!-- Themed Header -->
+                <div class="modal-header btn btn-primary w-100 text-start d-flex justify-content-between align-items-center">
+                  <h5 class="modal-title mb-0" id="complianceIssueModalLabel">Anna Burnett</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Modal Body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <div class="contentContainer">
+                        <div class="contentCell">
+                          <image src="https://assets.codepen.io/8889025/BSA_App22.jpg" class="responsive Benefits_tiles OPOS_img"></image>
+
+                          <p>Hey, I’m Anna! I joined the NHS Business Services Authority (NHSBSA) in June 2023 as a Portfolio Administration Assistant within Portfolio Management. I recently secured a 12-month
+                            secondment as a Project Support Officer — I can’t wait to get started!</p>
+
+                          <p>In the summer of 2013, I graduated from university with a First Class BA Hons in Digital Film Production. After university, my career took many exciting turns, with opportunities working on TV shows and later moving into the fast-paced hospitality sector. </p>
+                          <p>However, I found myself looking for a career that offered a different kind of stability and progression. </p>
+
+                          <p>The first step on my journey was completing a Level 2 Certificate in the Principles of Business and Administration. This led me to a variety of administrative roles, from providing client care in a veterinary hospital to serving as a receptionist in a Head Office overseeing care homes and hotels.</p>
+
+                          <p>I’ve always had an appreciation for the NHS and the meaningful work it does. That’s why, when I spotted the Portfolio Admin Assistant opportunity, I didn’t hesitate to apply. During the interview process, it was evident that the NHSBSA is dedicated not only to supporting the healthcare system but also to creating a supportive environment for colleagues. An environment that develops, rewards, and recognises everyone. </p>
+
+                          <p>I spent my first six months learning the ins and outs of Portfolio Management, exploring the diverse career paths, different teams, and the day-to-day responsibilities. The variety of roles, from Business Analysis to Assurance to Project Planning and Delivery, really surprised me.</p>
+
+                          <p>Whatever your role here at the NHSBSA, you’re connected to a truly wonderful colleague experience. I’ve been with the NHSBSA for less than a year and I’ve already participated in numerous training sessions tailored to my current position. Not only that, but I was also given the opportunity to complete the APM Project Fundamentals course. The course enhanced my understanding of project management and played a crucial part in securing my Project Support Officer secondment.</p>
+
+                          <p>Everyone at the NHSBSA has been friendly, supportive, and approachable. The positive culture and genuine care for colleagues are what sets the organisation apart. </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 Pages-col">
+          <!-- Section 12 -->
+
+          <div class="tileContainer">
+            <div class="tileCell" data-bs-toggle="modal" data-bs-target="#S12Modal">
+              <image src="https://assets.codepen.io/8889025/BSA_App19.jpg" class="responsive Benefits_tiles"></image>
+              <p class="tile_Sub_heading">Briony Gardner<br><span class="tile_Sub_heading">Customer Experience Delivery</span></p>
+            </div>
+
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="S12Modal" tabindex="-1" aria-labelledby="S12ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+              <div class="modal-content">
+                <!-- Themed Header -->
+                <div class="modal-header btn btn-primary w-100 text-start d-flex justify-content-between align-items-center">
+                  <h5 class="modal-title mb-0" id="complianceIssueModalLabel">Briony Gardner</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Modal Body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <div class="contentContainer">
+                        <div class="contentCell">
+                          <image src="https://assets.codepen.io/8889025/BSA_App24.jpg" class="responsive Benefits_tiles OPOS_img"></image>
+
+                          <p>Hi, I’m Briony and I’m part of the Customer Experience Delivery team at the NHS Business Services Authority (NHSBSA). Wondering how I ended up in this role? Let me fill you in.</p>
+
+                          <p>Fresh out of university at 21, I found myself offered a position in the customer contact centre. At that point, my knowledge of the NHSBSA was limited. It wasn’t until I started to dig a bit deeper that I discovered the NHSBSA’s crucial role in serving UK citizens, primary care, and the workforce. Here at the NHSBSA, we’re connected to much more than you think.</p>
+
+                          <p>I quickly settled into the role, fielding calls about dental and prescription exemptions, along with handling enquiries about the NHS Pension. I was dedicated to providing the best service possible, I know that a voice on the phone saying the right things can make all the difference to someone’s day.</p>
+
+                          <p>While working in the customer contact centre, I joined the internal knowledge help desk and began to help with recruiting and training new employees. I found joy in connecting with a diverse range of people, learning from their different perspectives. </p>
+
+                          <p>When a new role emerged, focusing on developing strategy and performance data, connecting clinical expertise, fostering nationwide connections, and enhancing customer services, I was very interested. I could see that the skills and experience I had gained in the customer contact centre would be well-suited for this role.</p>
+
+                          <p>Navigating a new team, after spending five years in the customer contact centre, felt daunting. However, the support from my new team made the transition easy. At the NHSBSA, I’ve always felt supported to develop, and it’s this ongoing support that gave me the confidence to apply for my current role in Customer Experience Delivery.</p>
+
+                          <p>I’m proud to be part of the NHSBSA. With the multitude of opportunities here, there’s no doubt that I’ll continue to be part of this organisation for many years to come.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="text-align:center;">
+          <div class="col-6 Pages-col">
+            <!-- Section 13 -->
+
+            <div class="tileContainer">
+              <div class="tileCell" data-bs-toggle="modal" data-bs-target="#S13Modal">
+                <image src="https://assets.codepen.io/8889025/BSA_App20.jpg" class="responsive Benefits_tiles"></image>
+                <p class="tile_Sub_heading">John Bautista<br><span class="tile_Sub_heading">Corporate HR Advisor</span></p>
+              </div>
+
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="S13Modal" tabindex="-1" aria-labelledby="S13ModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content">
+                  <!-- Themed Header -->
+                  <div class="modal-header btn btn-primary w-100 text-start d-flex justify-content-between align-items-center">
+                    <h5 class="modal-title mb-0" id="complianceIssueModalLabel">John Bautista</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <!-- Modal Body -->
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col">
+                        <div class="contentContainer">
+                          <div class="contentCell">
+                            <image src="https://assets.codepen.io/8889025/BSA_App25.jpg" class="responsive Benefits_tiles OPOS_img"></image>
+
+                            <p>Hey, I’m John! I started my journey with the NHS Business Services Authority (NHSBSA) as an HR Administrator in HR Shared Services before becoming a Corporate HR Coordinator, and now Corporate HR Advisor. Let me tell you more about my journey! </p>
+
+                            <p>I graduated from Northumbria University in 2020 with a BSc (Hons) in Psychology, followed by a postgraduate programme in Human Resource Management in 2021, the very same year I kicked off my journey with the NHSBSA. Balancing my work and studies wasn’t always easy, what made it all possible? Well, the flexibility here at the NHSBSA played a huge part. </p>
+
+                            <p>During my time in HR Shared Services, I was given endless opportunities to level up my skills, and I’m truly thankful for that. The opportunities allowed me to broaden my skills and pushed me to pursue a career in the Corporate HR Team. </p>
+
+                            <p>I value contributing to all things people related. Being a Corporate HR Advisor allows me to make a positive impact on colleagues and managers. What I love most is our collaborative approach, working as a team to develop impactful people initiatives. </p>
+
+                            <p>What truly sets the NHSBSA apart is the wealth of development opportunities. I joined the NHSBSA’s BAME Leadership Development Programme to strengthen my understanding of effective leadership, influence, and managing others. This experience opened the door to a stretch project, where I led a team in reviewing and enhancing HR policies. One of the things I loved most about the stretch project was the chance to connect with people across the NHSBSA. </p>
+
+                            <p>That’s not all, I’m thrilled to share that my efforts were recognised with a Rising Star Highly Commended award at the NHSBSA’s all colleague WeCARE Awards. Without a doubt, one of my proudest achievements so far!</p>
+
+                            <p>The NHSBSA is the only place I’ve ever worked, and I’ve got to say, I feel lucky to be part of an organisation that truly cares about its people. I’m all in for building my career right here at the NHSBSA.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 Pages-col">
+            <!-- Section 14 -->
+
+            <div class="tileContainer">
+              <div class="tileCell" data-bs-toggle="modal" data-bs-target="#S14Modal">
+                <image src="https://assets.codepen.io/8889025/BSA_App21.jpg" class="responsive Benefits_tiles"></image>
+                <p class="tile_Sub_heading">Paula Martins<br><span class="tile_Sub_heading">Caseworker</span></p>
+              </div>
+
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="S14Modal" tabindex="-1" aria-labelledby="S14ModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content">
+                  <!-- Themed Header -->
+                  <div class="modal-header btn btn-primary w-100 text-start d-flex justify-content-between align-items-center">
+                    <h5 class="modal-title mb-0" id="complianceIssueModalLabel">Paula Martins</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <!-- Modal Body -->
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col">
+                        <div class="contentContainer">
+                          <div class="contentCell">
+                            <image src="https://assets.codepen.io/8889025/BSA_App26.jpg" class="responsive Benefits_tiles OPOS_img"></image>
+
+                            <p>Hey, I’m Paula, I’m delighted to share my journey within Primary Care Services at the NHS Business Services Authority (NHSBSA). In 2008, I graduated from the University of Aveiro with a BA in Public Administration. As if that wasn’t exciting enough, that very year saw me embarking on another adventure, moving to England!</p>
+
+                            <p>I started at the NHSBSA as a Type 1 Team Member, processing prescriptions at high volume allowing pharmacy contractors to be paid correctly. At the NHSBSA, it’s all about putting people first, what I truly loved about the role was the flexibility. It allowed me to balance my work and home life in a way that worked for me. </p>
+
+                            <p>After 12 years, the role had become second nature, and I sensed it was time for a change. Unsure of where to start, a Career Pathway with Provider Assurance Ophthalmic came my way,</p>
+
+                            <p>presenting a new challenge in a different area. The transition was a learning curve, but the support I received from the team was incredible. We all had the same shared goal - we’re all people connected to care, working together to create better health outcomes for everyone.</p>
+
+                            <p>After successfully completing the pathway, I applied for and secured a permanent place within the Provider Assurance Ophthalmic Contract Management Team. </p>
+
+                            <p>My previous role didn’t involve leading meetings, conducting site visits, or engaging with stakeholders. To address this gap in my experience, I joined Springboard, an NHSBSA development programme for women who want to take control, become more assertive, increase their confidence and enhance their career prospects. This was a transformative step that not only improved my professional skills but also had a positive impact on my personal life. What made it even more remarkable was the unwavering support from our leadership and the accessibility of such programmes across the NHSBSA.</p>
+
+                            <p>Recently, I secured a formal progression opportunity within Assurance Services. It has given me the chance to apply everything I learned during Springboard in a practical setting. </p>
+
+                            <p>I truly believe that the greatest thing about any journey is not so much about how you start, or even where you are now, but how far you are willing to go.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" style="text-align:center;">
+            <div class="col-6 Pages-col">
+              <div class="tileContainer">
+                <div class="tileCell" onclick="showPage('App_LATBSA_JB')">
+
+                </div>
+
+              </div>
+
+            </div>
+            <div class="col-6 Pages-col">
+              <div class="tileContainer">
+                <div class="tileCell" onclick="showPage('App_LATBSA_PM')">
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col Pages-col">
+              <image src="https://assets.codepen.io/8889025/BSA_App17.jpg" class="responsive Banner_image"></image>
+              <!--<div class="banner-text-overlay">
+        <h1>The Welcome Hub</h1>
+      </div>
+-->
+            </div>
+          </div>
+        </div>
+      </div>
+
+</body>
+<footer>
+  <!-- Bootstrap Bundle JS (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Your Custom Script -->
+  <script src="script.js"></script>
+
+</footer>
+
+</html>
